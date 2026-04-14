@@ -1,6 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
+const BASE_URL = "https://cal-backend-gzoc.onrender.com";
+
 export default function BookingPage({ params }) {
   const { slug } = React.use(params);
 
@@ -19,7 +21,7 @@ export default function BookingPage({ params }) {
 
   // ✅ Fetch event
   useEffect(() => {
-    fetch("http://localhost:8000/api/events")
+    fetch(`${BASE_URL}/api/events`)
       .then(res => res.json())
       .then(data => {
         const found = data.find(e => e.slug === slug);
@@ -36,7 +38,7 @@ export default function BookingPage({ params }) {
     setLoading(true);
     try {
       const res = await fetch(
-        `http://localhost:8000/api/slots?date=${selectedDate}&eventId=${event.id}`
+        `${BASE_URL}/api/slots?date=${selectedDate}&eventId=${event.id}`
       );
       const data = await res.json();
       setSlots(data);
@@ -55,7 +57,7 @@ export default function BookingPage({ params }) {
     }
 
     try {
-      const res = await fetch("http://localhost:8000/api/bookings", {
+      const res = await fetch(`${BASE_URL}/api/bookings`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
