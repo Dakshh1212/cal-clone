@@ -1,139 +1,80 @@
-# 📅 Cal.com Clone (Booking System)
+# Cal.com Clone - Booking System 🚀
 
-A full-stack scheduling application inspired by Cal.com, allowing users to create event types and let others book available time slots.
+## 🔗 Deployed App
+Frontend: https://cal-clone-iota-eight.vercel.app  
+Backend: https://cal-backend-gzoc.onrender.com  
 
 ---
 
-## 🚀 Features
-
-### Core Features
-
-* Create and manage event types (15, 30, 60 mins)
-* Set weekly availability
-* Generate dynamic time slots based on duration
-* Book meetings with name & email
-* Prevent double bookings using database constraints
-
-### Bonus Features
-
-* 📧 Email confirmation using Nodemailer
-* 📱 Responsive design (mobile, tablet, desktop)
-* ❌ Cancel booking functionality
-* 🚫 Disabled already booked slots in UI
-* ⚡ Clean UI inspired by Cal.com
+## 📌 Overview
+This is a full-stack Cal.com-style booking application where users can view event types and book available time slots.
 
 ---
 
 ## 🛠 Tech Stack
 
 ### Frontend
-
-* Next.js (App Router)
-* React
-* Tailwind CSS
+- Next.js (App Router)
+- Tailwind CSS
 
 ### Backend
-
-* Node.js
-* Express.js
+- Node.js
+- Express.js
 
 ### Database
-
-* PostgreSQL
-
----
-
-## ⚙️ Setup Instructions
-
-### 1. Clone Repository
-
-```bash
-git clone <your-repo-link>
-cd cal-clone
-```
+- PostgreSQL (Render)
 
 ---
 
-### 2. Backend Setup
+## ⚙️ Features
 
-```bash
-cd backend
-npm install
-```
-
-Create `.env` file:
-
-```env
-PORT=8000
-DB_USER=your_db_user
-DB_PASSWORD=your_password
-DB_HOST=localhost
-DB_PORT=5432
-DB_NAME=cal_clone
-
-EMAIL_USER=your_email@gmail.com
-EMAIL_PASS=your_app_password
-```
-
-Run backend:
-
-```bash
-npm run dev
-```
+- View event types (30 min, 60 min, etc.)
+- Dynamic booking page using slug
+- Time slot generation based on availability
+- Prevent double bookings
+- Store bookings (name, email, time)
+- Responsive UI (mobile + desktop)
+- Deployed on Vercel & Render
 
 ---
 
-### 3. Frontend Setup
+## 🚀 How It Works
 
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
----
-
-## 🧠 Assumptions
-
-* Single default user (no authentication required)
-* All event types belong to one user
-* Availability is fixed for weekdays (Mon–Fri)
-* Time slots generated dynamically using duration
-* Booking conflicts handled at database level
+1. User selects an event
+2. Picks a date
+3. Available slots are generated
+4. User enters name & email
+5. Booking is saved in PostgreSQL
 
 ---
 
-## 📸 Screens
+## 🧠 Database Design
 
-* Dashboard (Event Types)
-* Booking Page
-* Confirmation Page
-
----
-
-## 📌 Future Improvements
-
-* Rescheduling bookings
-* Google Calendar integration
-* Multiple users with authentication
-* Advanced availability (date overrides, custom schedules)
+### Tables:
+- event_types
+- availability
+- bookings
 
 ---
 
-## 🙌 Author
+## ⚠️ Assumptions
 
-Daksh Thakral
-
----
-
-## 🔗 Links
-
-* Frontend: (add after deployment)
-* Backend API: (add after deployment)
+- Single user system (no login required)
+- Default availability (9 AM – 5 PM)
+- Same schedule for weekdays
 
 ---
 
-## 📌 Notes
+## 🔥 Challenges Faced
 
-This project was built as part of a full-stack/backend assignment.
-Focus was on clean architecture, real-world features, and scalable design.
+- CORS issues during deployment
+- Connecting Render PostgreSQL with backend
+- Handling environment variables correctly
+- Fixing wrong database connections
+
+---
+
+## 👨‍💻 Author
+
+Daksh Thakral  
+Chitkara University (2027)
